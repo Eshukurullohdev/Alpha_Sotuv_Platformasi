@@ -72,6 +72,7 @@
                                 <p class="mt-10">Please fill in the fields to log in to your account</p>
                             </div>
                             <form class="tp-login-option" method="post"><input type="hidden" name="csrfmiddlewaretoken" value="V6LzZSKXOtrkWcAiawwIQNt4LGxdhn82azC0PnONNy6LKnv6KGEojVCW4BVbFEpf">
+                                  {% csrf_token %}
                                 <div class="tp-login-input-wrapper">
                                     <div class="tp-login-input-box">
                                         <div class="tp-login-input">
