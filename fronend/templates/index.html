@@ -326,302 +326,50 @@
                                     aria-labelledby="new-tab" tabindex="0">
                                     <div class="row">
 
-                                        <div class="col-xl-3 col-lg-3 col-sm-6">
-                                            <div class="tp-product-item transition-3 mb-25">
-                                                <div class="tp-product-thumb p-relative fix m-img">
-                                                    <a href="store/3/index.html">
-                                                        <img src="media/products/preview.__large_preview.jpg"
-                                                            alt="product-electronic">
-                                                    </a>
-                                                    <!-- product action -->
-                                                    <div class="tp-product-action">
-                                                        <div class="tp-product-action-item d-flex flex-column">
-                                                            <button type="button"
-                                                                class="tp-product-action-btn tp-product-add-cart-btn">
-                                                                <svg width="20" height="20" viewBox="0 0 20 20"
-                                                                    fill="none" xmlns="../www.w3.org/2000/svg.html">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M3.93795 5.34749L4.54095 12.5195C4.58495 13.0715 5.03594 13.4855 5.58695 13.4855H5.59095H16.5019H16.5039C17.0249 13.4855 17.4699 13.0975 17.5439 12.5825L18.4939 6.02349C18.5159 5.86749 18.4769 5.71149 18.3819 5.58549C18.2879 5.45849 18.1499 5.37649 17.9939 5.35449C17.7849 5.36249 9.11195 5.35049 3.93795 5.34749ZM5.58495 14.9855C4.26795 14.9855 3.15295 13.9575 3.04595 12.6425L2.12995 1.74849L0.622945 1.48849C0.213945 1.41649 -0.0590549 1.02949 0.0109451 0.620487C0.082945 0.211487 0.477945 -0.054513 0.877945 0.00948704L2.95795 0.369487C3.29295 0.428487 3.54795 0.706487 3.57695 1.04649L3.81194 3.84749C18.0879 3.85349 18.1339 3.86049 18.2029 3.86849C18.7599 3.94949 19.2499 4.24049 19.5839 4.68849C19.9179 5.13549 20.0579 5.68649 19.9779 6.23849L19.0289 12.7965C18.8499 14.0445 17.7659 14.9855 16.5059 14.9855H16.5009H5.59295H5.58495Z"
-                                                                        fill="currentColor" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M14.8979 9.04382H12.1259C11.7109 9.04382 11.3759 8.70782 11.3759 8.29382C11.3759 7.87982 11.7109 7.54382 12.1259 7.54382H14.8979C15.3119 7.54382 15.6479 7.87982 15.6479 8.29382C15.6479 8.70782 15.3119 9.04382 14.8979 9.04382Z"
-                                                                        fill="currentColor" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M5.15474 17.702C5.45574 17.702 5.69874 17.945 5.69874 18.246C5.69874 18.547 5.45574 18.791 5.15474 18.791C4.85274 18.791 4.60974 18.547 4.60974 18.246C4.60974 17.945 4.85274 17.702 5.15474 17.702Z"
-                                                                        fill="currentColor" />
+                                        {% for product in product %}
+                        <div class="col-xl-3 col-lg-3 col-sm-6">
+                            <div class="tp-product-item transition-3 mb-25">
+                                <div class="tp-product-thumb p-relative fix m-img">
+            <!-- Product rasmi bosilganda detail sahifaga o‘tadi -->
+            <a href="{% url 'product_detail' product.id %}">
+                <img src="{{ product.img.url }}" alt="product-electronic">
+            </a>
 
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M5.15374 18.0409C5.04074 18.0409 4.94874 18.1329 4.94874 18.2459C4.94874 18.4729 5.35974 18.4729 5.35974 18.2459C5.35974 18.1329 5.26674 18.0409 5.15374 18.0409ZM5.15374 19.5409C4.43974 19.5409 3.85974 18.9599 3.85974 18.2459C3.85974 17.5319 4.43974 16.9519 5.15374 16.9519C5.86774 16.9519 6.44874 17.5319 6.44874 18.2459C6.44874 18.9599 5.86774 19.5409 5.15374 19.5409Z"
-                                                                        fill="currentColor" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M16.435 17.702C16.736 17.702 16.98 17.945 16.98 18.246C16.98 18.547 16.736 18.791 16.435 18.791C16.133 18.791 15.89 18.547 15.89 18.246C15.89 17.945 16.133 17.702 16.435 17.702Z"
-                                                                        fill="currentColor" />
+            <!-- product action -->
+            <div class="tp-product-action">
+                <div class="tp-product-action-item d-flex flex-column">
+                    <!-- Add to Cart tugmasi ham detail sahifaga olib o‘tadi -->
+                    <a href="{% url 'product_detail' product.id %}" 
+                       class="tp-product-action-btn tp-product-add-cart-btn">
+                        <span class="tp-product-tooltip">Add to Cart</span>
+                    </a>
 
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M16.434 18.0409C16.322 18.0409 16.23 18.1329 16.23 18.2459C16.231 18.4749 16.641 18.4729 16.64 18.2459C16.64 18.1329 16.547 18.0409 16.434 18.0409ZM16.434 19.5409C15.72 19.5409 15.14 18.9599 15.14 18.2459C15.14 17.5319 15.72 16.9519 16.434 16.9519C17.149 16.9519 17.73 17.5319 17.73 18.2459C17.73 18.9599 17.149 19.5409 16.434 19.5409Z"
-                                                                        fill="currentColor" />
-                                                                </svg>
+                    <!-- Quick View ham detail sahifaga olib o‘tadi -->
+                    <a href="{% url 'product_detail' product.id %}"
+                       class="tp-product-action-btn tp-product-quick-view-btn">
+                        <span class="tp-product-tooltip">Quick View</span>
+                    </a>
+                </div>
+            </div>
+        </div>
 
-                                                                <span class="tp-product-tooltip">Add to Cart</span>
-                                                            </button>
-                                                            <a href="store/1/index.html"
-                                                                class="tp-product-action-btn tp-product-quick-view-btn">
-                                                                <svg width="20" height="17" viewBox="0 0 20 17"
-                                                                    fill="none" xmlns="../www.w3.org/2000/svg.html">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M9.99938 5.64111C8.66938 5.64111 7.58838 6.72311 7.58838 8.05311C7.58838 9.38211 8.66938 10.4631 9.99938 10.4631C11.3294 10.4631 12.4114 9.38211 12.4114 8.05311C12.4114 6.72311 11.3294 5.64111 9.99938 5.64111ZM9.99938 11.9631C7.84238 11.9631 6.08838 10.2091 6.08838 8.05311C6.08838 5.89611 7.84238 4.14111 9.99938 4.14111C12.1564 4.14111 13.9114 5.89611 13.9114 8.05311C13.9114 10.2091 12.1564 11.9631 9.99938 11.9631Z"
-                                                                        fill="currentColor" />
-                                                                    <g mask="url(#mask0_1211_721)">
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                            d="M1.56975 8.05226C3.42975 12.1613 6.56275 14.6043 9.99975 14.6053C13.4368 14.6043 16.5697 12.1613 18.4298 8.05226C16.5697 3.94426 13.4368 1.50126 9.99975 1.50026C6.56375 1.50126 3.42975 3.94426 1.56975 8.05226ZM10.0017 16.1053H9.99775H9.99675C5.86075 16.1023 2.14675 13.2033 0.06075 8.34826C-0.02025 8.15926 -0.02025 7.94526 0.06075 7.75626C2.14675 2.90226 5.86175 0.00326172 9.99675 0.000261719C9.99875 -0.000738281 9.99875 -0.000738281 9.99975 0.000261719C10.0017 -0.000738281 10.0017 -0.000738281 10.0028 0.000261719C14.1388 0.00326172 17.8527 2.90226 19.9387 7.75626C20.0208 7.94526 20.0208 8.15926 19.9387 8.34826C17.8537 13.2033 14.1388 16.1023 10.0028 16.1053H10.0017Z"
-                                                                            fill="currentColor" />
-                                                                    </g>
-                                                                </svg>
-
-                                                                <span class="tp-product-tooltip">Quick View</span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- product content -->
-                                                <div class="tp-product-content">
-                                                    <div class="tp-product-category">
-                                                        <a>Simple</a>
-                                                    </div>
-                                                    <h3 class="tp-product-title">
-                                                        <a href="store/3/index.html">
-                                                            Bizos – Creative Agency HTML Template
-                                                        </a>
-                                                    </h3>
-                                                    <div class="tp-product-price-wrapper">
-                                                        <span class="tp-product-price">8.780.000 sum</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-3 col-lg-3 col-sm-6">
-                                            <div class="tp-product-item transition-3 mb-25">
-                                                <div class="tp-product-thumb p-relative fix m-img">
-                                                    <a href="store/6/index.html">
-                                                        <img src="media/products/01_preview.__large_preview.jpg"
-                                                            alt="product-electronic">
-                                                    </a>
-                                                    <!-- product action -->
-                                                    <div class="tp-product-action">
-                                                        <div class="tp-product-action-item d-flex flex-column">
-                                                            <button type="button"
-                                                                class="tp-product-action-btn tp-product-add-cart-btn">
-                                                                <svg width="20" height="20" viewBox="0 0 20 20"
-                                                                    fill="none" xmlns="../www.w3.org/2000/svg.html">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M3.93795 5.34749L4.54095 12.5195C4.58495 13.0715 5.03594 13.4855 5.58695 13.4855H5.59095H16.5019H16.5039C17.0249 13.4855 17.4699 13.0975 17.5439 12.5825L18.4939 6.02349C18.5159 5.86749 18.4769 5.71149 18.3819 5.58549C18.2879 5.45849 18.1499 5.37649 17.9939 5.35449C17.7849 5.36249 9.11195 5.35049 3.93795 5.34749ZM5.58495 14.9855C4.26795 14.9855 3.15295 13.9575 3.04595 12.6425L2.12995 1.74849L0.622945 1.48849C0.213945 1.41649 -0.0590549 1.02949 0.0109451 0.620487C0.082945 0.211487 0.477945 -0.054513 0.877945 0.00948704L2.95795 0.369487C3.29295 0.428487 3.54795 0.706487 3.57695 1.04649L3.81194 3.84749C18.0879 3.85349 18.1339 3.86049 18.2029 3.86849C18.7599 3.94949 19.2499 4.24049 19.5839 4.68849C19.9179 5.13549 20.0579 5.68649 19.9779 6.23849L19.0289 12.7965C18.8499 14.0445 17.7659 14.9855 16.5059 14.9855H16.5009H5.59295H5.58495Z"
-                                                                        fill="currentColor" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M14.8979 9.04382H12.1259C11.7109 9.04382 11.3759 8.70782 11.3759 8.29382C11.3759 7.87982 11.7109 7.54382 12.1259 7.54382H14.8979C15.3119 7.54382 15.6479 7.87982 15.6479 8.29382C15.6479 8.70782 15.3119 9.04382 14.8979 9.04382Z"
-                                                                        fill="currentColor" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M5.15474 17.702C5.45574 17.702 5.69874 17.945 5.69874 18.246C5.69874 18.547 5.45574 18.791 5.15474 18.791C4.85274 18.791 4.60974 18.547 4.60974 18.246C4.60974 17.945 4.85274 17.702 5.15474 17.702Z"
-                                                                        fill="currentColor" />
-
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M5.15374 18.0409C5.04074 18.0409 4.94874 18.1329 4.94874 18.2459C4.94874 18.4729 5.35974 18.4729 5.35974 18.2459C5.35974 18.1329 5.26674 18.0409 5.15374 18.0409ZM5.15374 19.5409C4.43974 19.5409 3.85974 18.9599 3.85974 18.2459C3.85974 17.5319 4.43974 16.9519 5.15374 16.9519C5.86774 16.9519 6.44874 17.5319 6.44874 18.2459C6.44874 18.9599 5.86774 19.5409 5.15374 19.5409Z"
-                                                                        fill="currentColor" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M16.435 17.702C16.736 17.702 16.98 17.945 16.98 18.246C16.98 18.547 16.736 18.791 16.435 18.791C16.133 18.791 15.89 18.547 15.89 18.246C15.89 17.945 16.133 17.702 16.435 17.702Z"
-                                                                        fill="currentColor" />
-
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M16.434 18.0409C16.322 18.0409 16.23 18.1329 16.23 18.2459C16.231 18.4749 16.641 18.4729 16.64 18.2459C16.64 18.1329 16.547 18.0409 16.434 18.0409ZM16.434 19.5409C15.72 19.5409 15.14 18.9599 15.14 18.2459C15.14 17.5319 15.72 16.9519 16.434 16.9519C17.149 16.9519 17.73 17.5319 17.73 18.2459C17.73 18.9599 17.149 19.5409 16.434 19.5409Z"
-                                                                        fill="currentColor" />
-                                                                </svg>
-
-                                                                <span class="tp-product-tooltip">Add to Cart</span>
-                                                            </button>
-                                                            <a href="store/1/index.html"
-                                                                class="tp-product-action-btn tp-product-quick-view-btn">
-                                                                <svg width="20" height="17" viewBox="0 0 20 17"
-                                                                    fill="none" xmlns="../www.w3.org/2000/svg.html">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M9.99938 5.64111C8.66938 5.64111 7.58838 6.72311 7.58838 8.05311C7.58838 9.38211 8.66938 10.4631 9.99938 10.4631C11.3294 10.4631 12.4114 9.38211 12.4114 8.05311C12.4114 6.72311 11.3294 5.64111 9.99938 5.64111ZM9.99938 11.9631C7.84238 11.9631 6.08838 10.2091 6.08838 8.05311C6.08838 5.89611 7.84238 4.14111 9.99938 4.14111C12.1564 4.14111 13.9114 5.89611 13.9114 8.05311C13.9114 10.2091 12.1564 11.9631 9.99938 11.9631Z"
-                                                                        fill="currentColor" />
-                                                                    <g mask="url(#mask0_1211_721)">
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                            d="M1.56975 8.05226C3.42975 12.1613 6.56275 14.6043 9.99975 14.6053C13.4368 14.6043 16.5697 12.1613 18.4298 8.05226C16.5697 3.94426 13.4368 1.50126 9.99975 1.50026C6.56375 1.50126 3.42975 3.94426 1.56975 8.05226ZM10.0017 16.1053H9.99775H9.99675C5.86075 16.1023 2.14675 13.2033 0.06075 8.34826C-0.02025 8.15926 -0.02025 7.94526 0.06075 7.75626C2.14675 2.90226 5.86175 0.00326172 9.99675 0.000261719C9.99875 -0.000738281 9.99875 -0.000738281 9.99975 0.000261719C10.0017 -0.000738281 10.0017 -0.000738281 10.0028 0.000261719C14.1388 0.00326172 17.8527 2.90226 19.9387 7.75626C20.0208 7.94526 20.0208 8.15926 19.9387 8.34826C17.8537 13.2033 14.1388 16.1023 10.0028 16.1053H10.0017Z"
-                                                                            fill="currentColor" />
-                                                                    </g>
-                                                                </svg>
-
-                                                                <span class="tp-product-tooltip">Quick View</span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- product content -->
-                                                <div class="tp-product-content">
-                                                    <div class="tp-product-category">
-                                                        <a>Premium</a>
-                                                    </div>
-                                                    <h3 class="tp-product-title">
-                                                        <a href="store/6/index.html">
-                                                            Dreams LMS - Learning Education Platform Template
-                                                        </a>
-                                                    </h3>
-                                                    <div class="tp-product-price-wrapper">
-                                                        <span class="tp-product-price">14.870.000 sum</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-3 col-lg-3 col-sm-6">
-                                            <div class="tp-product-item transition-3 mb-25">
-                                                <div class="tp-product-thumb p-relative fix m-img">
-                                                    <a href="store/4/index.html">
-                                                        <img src="media/products/preview.__large_preview.png"
-                                                            alt="product-electronic">
-                                                    </a>
-                                                    <!-- product action -->
-                                                    <div class="tp-product-action">
-                                                        <div class="tp-product-action-item d-flex flex-column">
-                                                            <button type="button"
-                                                                class="tp-product-action-btn tp-product-add-cart-btn">
-                                                                <svg width="20" height="20" viewBox="0 0 20 20"
-                                                                    fill="none" xmlns="../www.w3.org/2000/svg.html">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M3.93795 5.34749L4.54095 12.5195C4.58495 13.0715 5.03594 13.4855 5.58695 13.4855H5.59095H16.5019H16.5039C17.0249 13.4855 17.4699 13.0975 17.5439 12.5825L18.4939 6.02349C18.5159 5.86749 18.4769 5.71149 18.3819 5.58549C18.2879 5.45849 18.1499 5.37649 17.9939 5.35449C17.7849 5.36249 9.11195 5.35049 3.93795 5.34749ZM5.58495 14.9855C4.26795 14.9855 3.15295 13.9575 3.04595 12.6425L2.12995 1.74849L0.622945 1.48849C0.213945 1.41649 -0.0590549 1.02949 0.0109451 0.620487C0.082945 0.211487 0.477945 -0.054513 0.877945 0.00948704L2.95795 0.369487C3.29295 0.428487 3.54795 0.706487 3.57695 1.04649L3.81194 3.84749C18.0879 3.85349 18.1339 3.86049 18.2029 3.86849C18.7599 3.94949 19.2499 4.24049 19.5839 4.68849C19.9179 5.13549 20.0579 5.68649 19.9779 6.23849L19.0289 12.7965C18.8499 14.0445 17.7659 14.9855 16.5059 14.9855H16.5009H5.59295H5.58495Z"
-                                                                        fill="currentColor" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M14.8979 9.04382H12.1259C11.7109 9.04382 11.3759 8.70782 11.3759 8.29382C11.3759 7.87982 11.7109 7.54382 12.1259 7.54382H14.8979C15.3119 7.54382 15.6479 7.87982 15.6479 8.29382C15.6479 8.70782 15.3119 9.04382 14.8979 9.04382Z"
-                                                                        fill="currentColor" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M5.15474 17.702C5.45574 17.702 5.69874 17.945 5.69874 18.246C5.69874 18.547 5.45574 18.791 5.15474 18.791C4.85274 18.791 4.60974 18.547 4.60974 18.246C4.60974 17.945 4.85274 17.702 5.15474 17.702Z"
-                                                                        fill="currentColor" />
-
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M5.15374 18.0409C5.04074 18.0409 4.94874 18.1329 4.94874 18.2459C4.94874 18.4729 5.35974 18.4729 5.35974 18.2459C5.35974 18.1329 5.26674 18.0409 5.15374 18.0409ZM5.15374 19.5409C4.43974 19.5409 3.85974 18.9599 3.85974 18.2459C3.85974 17.5319 4.43974 16.9519 5.15374 16.9519C5.86774 16.9519 6.44874 17.5319 6.44874 18.2459C6.44874 18.9599 5.86774 19.5409 5.15374 19.5409Z"
-                                                                        fill="currentColor" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M16.435 17.702C16.736 17.702 16.98 17.945 16.98 18.246C16.98 18.547 16.736 18.791 16.435 18.791C16.133 18.791 15.89 18.547 15.89 18.246C15.89 17.945 16.133 17.702 16.435 17.702Z"
-                                                                        fill="currentColor" />
-
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M16.434 18.0409C16.322 18.0409 16.23 18.1329 16.23 18.2459C16.231 18.4749 16.641 18.4729 16.64 18.2459C16.64 18.1329 16.547 18.0409 16.434 18.0409ZM16.434 19.5409C15.72 19.5409 15.14 18.9599 15.14 18.2459C15.14 17.5319 15.72 16.9519 16.434 16.9519C17.149 16.9519 17.73 17.5319 17.73 18.2459C17.73 18.9599 17.149 19.5409 16.434 19.5409Z"
-                                                                        fill="currentColor" />
-                                                                </svg>
-
-                                                                <span class="tp-product-tooltip">Add to Cart</span>
-                                                            </button>
-                                                            <a href="store/1/index.html"
-                                                                class="tp-product-action-btn tp-product-quick-view-btn">
-                                                                <svg width="20" height="17" viewBox="0 0 20 17"
-                                                                    fill="none" xmlns="../www.w3.org/2000/svg.html">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M9.99938 5.64111C8.66938 5.64111 7.58838 6.72311 7.58838 8.05311C7.58838 9.38211 8.66938 10.4631 9.99938 10.4631C11.3294 10.4631 12.4114 9.38211 12.4114 8.05311C12.4114 6.72311 11.3294 5.64111 9.99938 5.64111ZM9.99938 11.9631C7.84238 11.9631 6.08838 10.2091 6.08838 8.05311C6.08838 5.89611 7.84238 4.14111 9.99938 4.14111C12.1564 4.14111 13.9114 5.89611 13.9114 8.05311C13.9114 10.2091 12.1564 11.9631 9.99938 11.9631Z"
-                                                                        fill="currentColor" />
-                                                                    <g mask="url(#mask0_1211_721)">
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                            d="M1.56975 8.05226C3.42975 12.1613 6.56275 14.6043 9.99975 14.6053C13.4368 14.6043 16.5697 12.1613 18.4298 8.05226C16.5697 3.94426 13.4368 1.50126 9.99975 1.50026C6.56375 1.50126 3.42975 3.94426 1.56975 8.05226ZM10.0017 16.1053H9.99775H9.99675C5.86075 16.1023 2.14675 13.2033 0.06075 8.34826C-0.02025 8.15926 -0.02025 7.94526 0.06075 7.75626C2.14675 2.90226 5.86175 0.00326172 9.99675 0.000261719C9.99875 -0.000738281 9.99875 -0.000738281 9.99975 0.000261719C10.0017 -0.000738281 10.0017 -0.000738281 10.0028 0.000261719C14.1388 0.00326172 17.8527 2.90226 19.9387 7.75626C20.0208 7.94526 20.0208 8.15926 19.9387 8.34826C17.8537 13.2033 14.1388 16.1023 10.0028 16.1053H10.0017Z"
-                                                                            fill="currentColor" />
-                                                                    </g>
-                                                                </svg>
-
-                                                                <span class="tp-product-tooltip">Quick View</span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- product content -->
-                                                <div class="tp-product-content">
-                                                    <div class="tp-product-category">
-                                                        <a>Premium</a>
-                                                    </div>
-                                                    <h3 class="tp-product-title">
-                                                        <a href="store/4/index.html">
-                                                            Eventrox - Conference and Event HTML Template
-                                                        </a>
-                                                    </h3>
-                                                    <div class="tp-product-price-wrapper">
-                                                        <span class="tp-product-price">8.320.000 sum</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-3 col-lg-3 col-sm-6">
-                                            <div class="tp-product-item transition-3 mb-25">
-                                                <div class="tp-product-thumb p-relative fix m-img">
-                                                    <a href="store/5/index.html">
-                                                        <img src="media/products/01_pereview_image.__large_preview.png"
-                                                            alt="product-electronic">
-                                                    </a>
-                                                    <!-- product action -->
-                                                    <div class="tp-product-action">
-                                                        <div class="tp-product-action-item d-flex flex-column">
-                                                            <button type="button"
-                                                                class="tp-product-action-btn tp-product-add-cart-btn">
-                                                                <svg width="20" height="20" viewBox="0 0 20 20"
-                                                                    fill="none" xmlns="../www.w3.org/2000/svg.html">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M3.93795 5.34749L4.54095 12.5195C4.58495 13.0715 5.03594 13.4855 5.58695 13.4855H5.59095H16.5019H16.5039C17.0249 13.4855 17.4699 13.0975 17.5439 12.5825L18.4939 6.02349C18.5159 5.86749 18.4769 5.71149 18.3819 5.58549C18.2879 5.45849 18.1499 5.37649 17.9939 5.35449C17.7849 5.36249 9.11195 5.35049 3.93795 5.34749ZM5.58495 14.9855C4.26795 14.9855 3.15295 13.9575 3.04595 12.6425L2.12995 1.74849L0.622945 1.48849C0.213945 1.41649 -0.0590549 1.02949 0.0109451 0.620487C0.082945 0.211487 0.477945 -0.054513 0.877945 0.00948704L2.95795 0.369487C3.29295 0.428487 3.54795 0.706487 3.57695 1.04649L3.81194 3.84749C18.0879 3.85349 18.1339 3.86049 18.2029 3.86849C18.7599 3.94949 19.2499 4.24049 19.5839 4.68849C19.9179 5.13549 20.0579 5.68649 19.9779 6.23849L19.0289 12.7965C18.8499 14.0445 17.7659 14.9855 16.5059 14.9855H16.5009H5.59295H5.58495Z"
-                                                                        fill="currentColor" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M14.8979 9.04382H12.1259C11.7109 9.04382 11.3759 8.70782 11.3759 8.29382C11.3759 7.87982 11.7109 7.54382 12.1259 7.54382H14.8979C15.3119 7.54382 15.6479 7.87982 15.6479 8.29382C15.6479 8.70782 15.3119 9.04382 14.8979 9.04382Z"
-                                                                        fill="currentColor" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M5.15474 17.702C5.45574 17.702 5.69874 17.945 5.69874 18.246C5.69874 18.547 5.45574 18.791 5.15474 18.791C4.85274 18.791 4.60974 18.547 4.60974 18.246C4.60974 17.945 4.85274 17.702 5.15474 17.702Z"
-                                                                        fill="currentColor" />
-
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M5.15374 18.0409C5.04074 18.0409 4.94874 18.1329 4.94874 18.2459C4.94874 18.4729 5.35974 18.4729 5.35974 18.2459C5.35974 18.1329 5.26674 18.0409 5.15374 18.0409ZM5.15374 19.5409C4.43974 19.5409 3.85974 18.9599 3.85974 18.2459C3.85974 17.5319 4.43974 16.9519 5.15374 16.9519C5.86774 16.9519 6.44874 17.5319 6.44874 18.2459C6.44874 18.9599 5.86774 19.5409 5.15374 19.5409Z"
-                                                                        fill="currentColor" />
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M16.435 17.702C16.736 17.702 16.98 17.945 16.98 18.246C16.98 18.547 16.736 18.791 16.435 18.791C16.133 18.791 15.89 18.547 15.89 18.246C15.89 17.945 16.133 17.702 16.435 17.702Z"
-                                                                        fill="currentColor" />
-
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M16.434 18.0409C16.322 18.0409 16.23 18.1329 16.23 18.2459C16.231 18.4749 16.641 18.4729 16.64 18.2459C16.64 18.1329 16.547 18.0409 16.434 18.0409ZM16.434 19.5409C15.72 19.5409 15.14 18.9599 15.14 18.2459C15.14 17.5319 15.72 16.9519 16.434 16.9519C17.149 16.9519 17.73 17.5319 17.73 18.2459C17.73 18.9599 17.149 19.5409 16.434 19.5409Z"
-                                                                        fill="currentColor" />
-                                                                </svg>
-
-                                                                <span class="tp-product-tooltip">Add to Cart</span>
-                                                            </button>
-                                                            <a href="store/1/index.html"
-                                                                class="tp-product-action-btn tp-product-quick-view-btn">
-                                                                <svg width="20" height="17" viewBox="0 0 20 17"
-                                                                    fill="none" xmlns="../www.w3.org/2000/svg.html">
-                                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                        d="M9.99938 5.64111C8.66938 5.64111 7.58838 6.72311 7.58838 8.05311C7.58838 9.38211 8.66938 10.4631 9.99938 10.4631C11.3294 10.4631 12.4114 9.38211 12.4114 8.05311C12.4114 6.72311 11.3294 5.64111 9.99938 5.64111ZM9.99938 11.9631C7.84238 11.9631 6.08838 10.2091 6.08838 8.05311C6.08838 5.89611 7.84238 4.14111 9.99938 4.14111C12.1564 4.14111 13.9114 5.89611 13.9114 8.05311C13.9114 10.2091 12.1564 11.9631 9.99938 11.9631Z"
-                                                                        fill="currentColor" />
-                                                                    <g mask="url(#mask0_1211_721)">
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                            d="M1.56975 8.05226C3.42975 12.1613 6.56275 14.6043 9.99975 14.6053C13.4368 14.6043 16.5697 12.1613 18.4298 8.05226C16.5697 3.94426 13.4368 1.50126 9.99975 1.50026C6.56375 1.50126 3.42975 3.94426 1.56975 8.05226ZM10.0017 16.1053H9.99775H9.99675C5.86075 16.1023 2.14675 13.2033 0.06075 8.34826C-0.02025 8.15926 -0.02025 7.94526 0.06075 7.75626C2.14675 2.90226 5.86175 0.00326172 9.99675 0.000261719C9.99875 -0.000738281 9.99875 -0.000738281 9.99975 0.000261719C10.0017 -0.000738281 10.0017 -0.000738281 10.0028 0.000261719C14.1388 0.00326172 17.8527 2.90226 19.9387 7.75626C20.0208 7.94526 20.0208 8.15926 19.9387 8.34826C17.8537 13.2033 14.1388 16.1023 10.0028 16.1053H10.0017Z"
-                                                                            fill="currentColor" />
-                                                                    </g>
-                                                                </svg>
-
-                                                                <span class="tp-product-tooltip">Quick View</span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- product content -->
-                                                <div class="tp-product-content">
-                                                    <div class="tp-product-category">
-                                                        <a>Premium</a>
-                                                    </div>
-                                                    <h3 class="tp-product-title">
-                                                        <a href="store/5/index.html">
-                                                            Reves - Software and Digital Agency HTML Template
-                                                        </a>
-                                                    </h3>
-                                                    <div class="tp-product-price-wrapper">
-                                                        <span class="tp-product-price">12.560.000 sum</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
+        <!-- product content -->
+        <div class="tp-product-content">
+            <div class="tp-product-category">
+                <a href="{% url 'product_detail' product.id %}">{{ product.type }}</a>
+            </div>
+            <h3 class="tp-product-title">
+                <a href="{% url 'product_detail' product.id %}">
+                    {{ product.name }}
+                </a>
+            </h3>
+            <div class="tp-product-price-wrapper">
+                <span class="tp-product-price">{{ product.narx }} sum</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
                                     </div>
                                 </div>
                             </div>

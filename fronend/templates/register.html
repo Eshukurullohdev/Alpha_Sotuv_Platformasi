@@ -53,6 +53,21 @@
 
 
     <main>
+        {% if messages %}
+  <div class="container mt-3">
+    {% for message in messages %}
+      <div class="alert 
+                  {% if message.tags == 'error' %} alert-danger 
+                  {% elif message.tags == 'success' %} alert-success 
+                  {% elif message.tags == 'warning' %} alert-warning 
+                  {% else %} alert-info {% endif %} 
+                  alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
         <!-- login area start -->
         <section class="tp-login-area pb-140 p-relative z-index-1 fix pt-180">
             <div class="tp-login-shape">

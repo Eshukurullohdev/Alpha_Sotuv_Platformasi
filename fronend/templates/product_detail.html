@@ -1,0 +1,568 @@
+
+
+
+
+
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="zxx">
+
+<!-- Mirrored from alpha-templates.com/store/3/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 14 Sep 2025 10:46:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Bizos – Creative Agency HTML Template - Alpha Templates</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../static/assets/img/favicon.png">
+
+    <!-- Toastify -->
+    <link rel="stylesheet" href="../../../cdn.jsdelivr.net/npm/notyf%403/notyf.min.css">
+    <script src="../../../cdn.jsdelivr.net/npm/notyf%403/notyf.min.js"></script>
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="../../static/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../../static/assets/css/animate.css">
+    <link rel="stylesheet" href="../../static/assets/css/swiper-bundle.css">
+    <link rel="stylesheet" href="../../static/assets/css/slick.css">
+    <link rel="stylesheet" href="../../static/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="../../static/assets/css/font-awesome-pro.css">
+    <link rel="stylesheet" href="../../static/assets/css/flaticon_shofy.css">
+    <link rel="stylesheet" href="../../static/assets/css/spacing.css">
+    <link rel="stylesheet" href="../../static/assets/css/main.css">
+
+    <script>
+        function pushNotify(text, type) {
+            var notyf = new Notyf({
+                duration: 5000,
+                position: {
+                    x: 'right',
+                    y: 'top',
+                },
+                dismissible: true
+            });
+            notyf.open({
+                type,
+                message: text
+            })
+        }
+    </script>
+</head>
+<body>
+
+
+
+
+    <!-- offcanvas area start -->
+    <div class="offcanvas__area offcanvas__radius">
+        <div class="offcanvas__wrapper">
+            <div class="offcanvas__close">
+                <button class="offcanvas__close-btn offcanvas-close-btn">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round"/>
+                        <path d="M1 1L11 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="offcanvas__content">
+                <div class="offcanvas__top mb-70 d-flex justify-content-between align-items-center">
+                    <div class="offcanvas__logo logo">
+                        <a href="{% url 'home' %}">
+                            <img width="170" src="../../static/assets/img/logo.png" alt="logo">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tp-main-menu-mobile fix d-lg-none mb-40"></div>
+            </div>
+            <div class="offcanvas__bottom">
+                <div class="offcanvas__footer d-flex align-items-center justify-content-between">
+                    <div class="offcanvas__select language">
+                        <div class="offcanvas__lang d-flex align-items-center justify-content-md-end">
+                            <div class="offcanvas__lang-img mr-15">
+                                <img src="../../static/assets/img/icon/language-flag.png" alt="">
+                            </div>
+                            <div class="offcanvas__lang-wrapper">
+                                <span class="offcanvas__lang-selected-lang tp-lang-toggle"
+                                      id="tp-offcanvas-lang-toggle">English</span>
+                                <ul class="offcanvas__lang-list tp-lang-list">
+                                    <li>O'zbek</li>
+                                    <li>Russian</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body-overlay"></div>
+    <!-- offcanvas area end -->
+
+    <!-- mobile menu area start -->
+    <div id="tp-bottom-menu-sticky" class="tp-mobile-menu d-lg-none">
+        <div class="container">
+            <div class="row row-cols-5">
+                <div class="col">
+                    <div class="tp-mobile-item text-center">
+                        <a href="../../index.html" class="tp-mobile-item-btn">
+                            <i style="font-weight: 350;" class="fa-regular fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tp-mobile-item text-center">
+                        <a href="../index.html" class="tp-mobile-item-btn">
+                            <i class="flaticon-store"></i>
+                            <span>Store</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tp-mobile-item text-center">
+                        <a href="../../contact/index.html" class="tp-mobile-item-btn">
+                            <i style="font-weight: 350;" class="fa-regular fa-phone"></i>
+                            <span>Contact</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tp-mobile-item text-center">
+                        <a href="../../profile/index.html" class="tp-mobile-item-btn">
+                            <i class="flaticon-user"></i>
+                            <span>Account</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="tp-mobile-item text-center">
+                        <button class="tp-mobile-item-btn tp-offcanvas-open-btn">
+                            <i class="flaticon-menu-1"></i>
+                            <span>Menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- mobile menu area end -->
+
+    <!-- header area start -->
+    <header>
+        <div class="tp-header-area p-relative z-index-11">
+            <!-- header top start  -->
+            <div class="tp-header-top black-bg p-relative z-index-1 d-none d-md-block">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="tp-header-welcome d-flex align-items-center">
+                           <span>
+                              <img width="20" src="../../static/assets/img/rocket.png" alt="rocket">
+                           </span>
+                                <p>Premium templates built with creativity and innovation.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="tp-header-top-right d-flex align-items-center justify-content-end">
+                                <div class="tp-header-top-menu d-flex align-items-center justify-content-end">
+                                    <div class="tp-header-top-menu-item tp-header-lang">
+                                        <span class="tp-header-lang-toggle" id="tp-header-lang-toggle">English</span>
+                                        <ul>
+                                            <li>
+                                                <a href="../../index.html">O'zbek</a>
+                                            </li>
+                                            <li>
+                                                <a href="../../index.html">Русский</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- header main start -->
+            <div class="tp-header-main tp-header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-6">
+                            <div class="logo">
+                                <a href="{% url 'home' %}">
+                                    <img width="150" src="../../static/assets/img/logo.png" alt="logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-7 d-none d-lg-block text-center">
+                            <div class="main-menu menu-style-1">
+                                <nav class="tp-main-menu-content">
+                                    <ul>
+                                        <li><a href="{% url 'home' %}">Home</a></li>
+                                        <li><a href="store/index.html">Templates</a></li>
+                                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-8 col-6">
+                            <div class="tp-header-main-right d-flex align-items-center justify-content-end">
+                                <div class="tp-header-login d-none d-lg-block">
+                                    <a href="../../login/index.html"
+                                       class="d-flex align-items-center">
+                                        <div class="tp-header-login-icon">
+                                    <span>
+                                       <svg width="17" height="21" viewBox="0 0 17 21" fill="none"
+                                            xmlns="../../../www.w3.org/2000/svg.html">
+                                          <circle cx="8.57894" cy="5.77803" r="4.77803" stroke="currentColor"
+                                                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                          <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M1.00002 17.2014C0.998732 16.8655 1.07385 16.5337 1.2197 16.2311C1.67736 15.3158 2.96798 14.8307 4.03892 14.611C4.81128 14.4462 5.59431 14.336 6.38217 14.2815C7.84084 14.1533 9.30793 14.1533 10.7666 14.2815C11.5544 14.3367 12.3374 14.4468 13.1099 14.611C14.1808 14.8307 15.4714 15.27 15.9291 16.2311C16.2224 16.8479 16.2224 17.564 15.9291 18.1808C15.4714 19.1419 14.1808 19.5812 13.1099 19.7918C12.3384 19.9634 11.5551 20.0766 10.7666 20.1304C9.57937 20.2311 8.38659 20.2494 7.19681 20.1854C6.92221 20.1854 6.65677 20.1854 6.38217 20.1304C5.59663 20.0773 4.81632 19.9641 4.04807 19.7918C2.96798 19.5812 1.68652 19.1419 1.2197 18.1808C1.0746 17.8747 0.999552 17.5401 1.00002 17.2014Z"
+                                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round"/>
+                                       </svg>
+                                    </span>
+                                        </div>
+                                        
+                                            <div class="tp-header-login-content d-none d-xl-block">
+                                                <span>Hello, Sign In</span>
+                                                <h5 class="tp-header-login-title">Your Account</h5>
+                                            </div>
+                                        
+                                    </a>
+                                </div>
+                                <div class="tp-header-action d-flex align-items-center ml-50">
+                                    <div class="tp-header-action-item">
+                                        <a href="../../cart/index.html">
+                                            <svg width="21" height="22" viewBox="0 0 21 22" fill="none"
+                                                 xmlns="../../../www.w3.org/2000/svg.html">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M6.48626 20.5H14.8341C17.9004 20.5 20.2528 19.3924 19.5847 14.9348L18.8066 8.89359C18.3947 6.66934 16.976 5.81808 15.7311 5.81808H5.55262C4.28946 5.81808 2.95308 6.73341 2.4771 8.89359L1.69907 14.9348C1.13157 18.889 3.4199 20.5 6.48626 20.5Z"
+                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                      stroke-linejoin="round"/>
+                                                <path d="M6.34902 5.5984C6.34902 3.21232 8.28331 1.27803 10.6694 1.27803V1.27803C11.8184 1.27316 12.922 1.72619 13.7362 2.53695C14.5504 3.3477 15.0081 4.44939 15.0081 5.5984V5.5984"
+                                                      stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                      stroke-linejoin="round"/>
+                                                <path d="M7.70365 10.1018H7.74942" stroke="currentColor"
+                                                      stroke-width="1.5"
+                                                      stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M13.5343 10.1018H13.5801" stroke="currentColor"
+                                                      stroke-width="1.5"
+                                                      stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="tp-header-action-item d-lg-none">
+                                        <button type="button" class="tp-header-action-btn tp-offcanvas-open-btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="16"
+                                                 viewBox="0 0 30 16">
+                                                <rect x="10" width="20" height="2" fill="currentColor"/>
+                                                <rect x="5" y="7" width="25" height="2" fill="currentColor"/>
+                                                <rect x="10" y="14" width="20" height="2" fill="currentColor"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header area end -->
+
+    <div id="header-sticky-2" class="tp-header-sticky-area">
+        <div class="container">
+            <div class="tp-mega-menu-wrapper p-relative">
+                <div class="row align-items-center">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-6">
+                        <div class="logo">
+                            <a href="../../index.html">
+                                <img width="170" src="../../static/assets/img/logo.png" alt="logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 d-none d-md-block text-center">
+                        <div class="tp-header-sticky-menu main-menu menu-style-1">
+                            <nav id="mobile-menu">
+                                <ul>
+                                    <li><a href="../../index.html">Home</a></li>
+                                    <li><a href="../index.html">Templates</a></li>
+                                    <li><a href="../../contact/index.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-6">
+                        <div class="tp-header-action d-flex align-items-center justify-content-end ml-50">
+                            <div class="tp-header-action-item">
+                                <a href="../../cart/index.html" class="tp-header-action-btn">
+                                    <svg width="21" height="22" viewBox="0 0 21 22" fill="none"
+                                         xmlns="../../../www.w3.org/2000/svg.html">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M6.48626 20.5H14.8341C17.9004 20.5 20.2528 19.3924 19.5847 14.9348L18.8066 8.89359C18.3947 6.66934 16.976 5.81808 15.7311 5.81808H5.55262C4.28946 5.81808 2.95308 6.73341 2.4771 8.89359L1.69907 14.9348C1.13157 18.889 3.4199 20.5 6.48626 20.5Z"
+                                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                        <path d="M6.34902 5.5984C6.34902 3.21232 8.28331 1.27803 10.6694 1.27803V1.27803C11.8184 1.27316 12.922 1.72619 13.7362 2.53695C14.5504 3.3477 15.0081 4.44939 15.0081 5.5984V5.5984"
+                                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                              stroke-linejoin="round"/>
+                                        <path d="M7.70365 10.1018H7.74942" stroke="currentColor" stroke-width="1.5"
+                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.5343 10.1018H13.5801" stroke="currentColor" stroke-width="1.5"
+                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="tp-header-action-item d-lg-none">
+                                <button type="button" class="tp-header-action-btn tp-offcanvas-open-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" viewBox="0 0 30 16">
+                                        <rect x="10" width="20" height="2" fill="currentColor"/>
+                                        <rect x="5" y="7" width="25" height="2" fill="currentColor"/>
+                                        <rect x="10" y="14" width="20" height="2" fill="currentColor"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <main>
+        <!-- breadcrumb area start -->
+        <section class="breadcrumb__area breadcrumb__style-2 include-bg pt-50 pb-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="breadcrumb__content p-relative z-index-1">
+                            <div class="breadcrumb__list has-icon">
+                           <span class="breadcrumb-icon">
+                              <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
+                                   xmlns="../../../www.w3.org/2000/svg.html">
+                                 <path d="M1.42393 16H15.5759C15.6884 16 15.7962 15.9584 15.8758 15.8844C15.9553 15.8104 16 15.71 16 15.6054V6.29143C16 6.22989 15.9846 6.1692 15.9549 6.11422C15.9252 6.05923 15.8821 6.01147 15.829 5.97475L8.75305 1.07803C8.67992 1.02736 8.59118 1 8.5 1C8.40882 1 8.32008 1.02736 8.24695 1.07803L1.17098 5.97587C1.11791 6.01259 1.0748 6.06035 1.04511 6.11534C1.01543 6.17033 0.999976 6.23101 1 6.29255V15.6063C1.00027 15.7108 1.04504 15.8109 1.12451 15.8847C1.20398 15.9585 1.31165 16 1.42393 16ZM10.1464 15.2107H6.85241V10.6202H10.1464V15.2107ZM1.84866 6.48977L8.4999 1.88561L15.1517 6.48977V15.2107H10.9946V10.2256C10.9946 10.1209 10.95 10.0206 10.8704 9.94654C10.7909 9.87254 10.683 9.83096 10.5705 9.83096H6.42848C6.316 9.83096 6.20812 9.87254 6.12858 9.94654C6.04904 10.0206 6.00435 10.1209 6.00435 10.2256V15.2107H1.84806L1.84866 6.48977Z"
+                                       fill="#55585B" stroke="#55585B" stroke-width="0.5"/>
+                              </svg>
+                           </span>
+                                <span><a href="{% url 'home' %}">Home</a></span>
+                                <span><a href="../index.html">Templates</a></span>
+                              {{ product.name }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb area end -->
+
+        <!-- product details area start -->
+    <section class="tp-product-details-area pb-100">
+    <div class="tp-product-details-top pb-115">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="tp-product-details-thumb-wrapper tp-tab d-sm-flex"
+                         style="margin-right: 0!important; justify-content: center;">
+                        <div class="tab-content m-img" id="productDetailsNavContent">
+                            <div class="tab-pane fade show active" id="nav-1" role="tabpanel">
+                                <div class="tp-product-details-nav-main-thumb">
+                                    {% if product.img %}
+                                        <img style="width: 100%; height: 100%; object-fit: cover; object-position: center;"
+                                             src="{{ product.img.url }}" alt="{{ product.name }}">
+                                    {% else %}
+                                        <img src="{% static 'assets/img/no-image.png' %}" alt="No image">
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- col end -->
+
+                <div class="col-xl-6 col-lg-6">
+                    <div class="tp-product-details-wrapper" style="margin-left: 0!important;">
+                        <div class="tp-product-details-category">
+                            <span>{{ product.get_type_display }}</span>
+                        </div>
+                        <h3 class="tp-product-details-title">{{ product.name }}</h3>
+
+                        <!-- tavsif -->
+                        <p>{{ product.tavsif }}</p>
+
+                        <!-- price -->
+                        <div class="tp-product-details-price-wrapper mb-20">
+                            <span class="tp-product-details-price new-price">${{ product.narx }}</span>
+                        </div>
+
+                        <!-- actions -->
+                        <div class="tp-product-details-action-wrapper justify-content-between d-flex gap-3">
+                            <a href="#"
+                               class="tp-product-details-add-to-cart-btn w-100 text-center">Add To Cart</a>
+                            <a class="tp-product-details-buy-now-btn w-100 text-center">Buy Now</a>
+                        </div>
+
+                        <div class="tp-product-details-msg mb-15">
+                            <ul>
+                                <li>High-end quality</li>
+                                <li>24/7 Support - Always by Your Side</li>
+                            </ul>
+                        </div>
+                        <div class="tp-product-details-payment d-flex align-items-center flex-wrap justify-content-between">
+                            <p>Guaranteed safe <br> & secure checkout</p>
+                            <img width="120" style="border-radius: 5px;"
+                                 src="{% static 'assets/img/global_pay.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- product details area end -->
+    </main>
+
+
+
+
+    <!-- footer area start -->
+    <footer class="own_footer">
+        <div class="tp-footer-area" data-bg-color="footer-bg-grey">
+            <div class="tp-footer-top pt-65">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-3 col-md-4 col-sm-6">
+                            <div class="tp-footer-widget footer-col-1 mb-50">
+                                <div class="tp-footer-widget-content">
+                                    <div class="tp-footer-logo">
+                                        <a href="{% url 'home' %}">
+                                            <img width="200" src="../../static/assets/img/logo.png" alt="logo">
+                                        </a>
+                                    </div>
+                                    <p class="tp-footer-desc">We are a team of designers and developers that create high
+                                        quality HTML Templates</p>
+                                    <div class="tp-footer-social">
+                                        <a href="../../index.html"><i class="fa-brands fa-facebook-f"></i></a>
+                                        <a href="../../index.html"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="../../index.html"><i class="fa-brands fa-telegram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                            <div class="tp-footer-widget footer-col-2 mb-50">
+                                <h4 class="tp-footer-widget-title">Information</h4>
+                                <div class="tp-footer-widget-content">
+                                    <ul>
+                                        <li><a href="{% url 'home' %}">Company registration details</a></li>
+                                        <li><a href="/static/assets/files/privacy_policy.pdf">Privacy Policy</a></li>
+                                        <li><a href="/static/assets/files/terms_condition.pdf">
+                                            Terms & Conditions</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <div class="tp-footer-widget footer-col-3 mb-50">
+                                <h4 class="tp-footer-widget-title">Pages</h4>
+                                <div class="tp-footer-widget-content">
+                                    <ul>
+                                        <li><a href="{% url 'home' %}">Home</a></li>
+                                        <li><a href="store/index.html">Templates</a></li>
+                                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <div class="tp-footer-widget footer-col-4 mb-50">
+                                <h4 class="tp-footer-widget-title">Talk To Us</h4>
+                                <div class="tp-footer-widget-content">
+                                    <div class="tp-footer-talk mb-20">
+                                        <span>Got Questions? Call us</span>
+                                        <h4><a href="tel:+998988007550">+998 98 800 75 50</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tp-footer-bottom">
+                <div class="container">
+                    <div class="tp-footer-bottom-wrapper" style="padding-bottom: 20px!important;">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="tp-footer-copyright">
+                                    <p>© 2025 All rights reserved.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tp-footer-payment text-md-end">
+                                    <p>
+                                        <img style="border-radius: 5px;" width="100"
+                                             src="../../static/assets/img/global_pay.jpg" alt="globalpay">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer area end -->
+
+    <span class="additional_div"></span>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const isMobileOrTablet = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (window.innerWidth < 1025);
+
+            if (isMobileOrTablet) {
+                const footer = document.querySelector("footer.own_footer");
+                const additional_div = document.querySelector("span.additional_div");
+
+                if (footer) {
+                    footer.style.display = "none";
+                    additional_div.style.display = "block";
+                    additional_div.style.marginBottom = "100px";
+                }
+            }
+        });
+    </script>
+
+
+
+<!-- JS here -->
+<script src="../../static/assets/js/vendor/jquery.js"></script>
+<script src="../../static/assets/js/vendor/waypoints.js"></script>
+<script src="../../static/assets/js/bootstrap-bundle.js"></script>
+<script src="../../static/assets/js/meanmenu.js"></script>
+<script src="../../static/assets/js/swiper-bundle.js"></script>
+<script src="../../static/assets/js/slick.js"></script>
+<script src="../../static/assets/js/range-slider.js"></script>
+<script src="../../static/assets/js/magnific-popup.js"></script>
+<script src="../../static/assets/js/nice-select.js"></script>
+<script src="../../static/assets/js/purecounter.js"></script>
+<script src="../../static/assets/js/countdown.js"></script>
+<script src="../../static/assets/js/wow.js"></script>
+<script src="../../static/assets/js/isotope-pkgd.js"></script>
+<script src="../../static/assets/js/imagesloaded-pkgd.js"></script>
+<script src="../../static/assets/js/ajax-form.js"></script>
+<script src="../../static/assets/js/main.js"></script>
+
+<!-- Notify chiqarish -->
+
+</body>
+
+<!-- Mirrored from alpha-templates.com/store/3/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 14 Sep 2025 10:46:29 GMT -->
+</html>
