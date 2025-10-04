@@ -1,0 +1,146 @@
+\<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Profile — Admin</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body{background:linear-gradient(135deg,#1e3c72,#2a5298);min-height:100vh;display:flex;align-items:center;justify-content:center}
+    .card{max-width:520px;width:100%;border-radius:12px;padding:24px;box-shadow:0 12px 30px rgba(0,0,0,0.15)}
+    .btn-primary{background:#2a5298;border:none}
+    .small-note{font-size:0.85rem;color:#666}
+    .msg-wrap{position:fixed;top:20px;right:20px;z-index:2000;min-width:260px}
+  </style>
+</head>
+<body>
+<style>
+  .custom-msg-wrapper {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+  }
+  .custom-msg {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 300px;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: slideDown 0.5s forwards, fadeOut 0.5s 2s forwards;
+    margin-bottom: 10px;
+  }
+  .custom-msg.error {
+    background-color: #e74c3c; /* Qizil */
+  }
+  .custom-msg.success {
+    background-color: #2ecc71; /* Yashil */
+  }
+  .custom-msg.info {
+    background-color: #3498db; /* Ko‘k */
+  }
+  @keyframes slideDown {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+  }
+    .admin-logo {
+        display: inline-block;
+        text-decoration: none;
+        padding: 12px 24px;
+        margin-top: 20px;
+        margin-left: 20px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #3498db, #2ecc71);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .admin-logo h1 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 1px;
+    }
+
+    .admin-logo:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    }
+</style>
+<div class="msg-wrap">
+    <a href="{% url 'admin_page' %}" class="admin-logo">
+       <h1>Admin Page</h1>
+   </a>
+{% if messages %}
+  <div class="custom-msg-wrapper">
+    {% for message in messages %}
+      <div class="custom-msg {{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+</div>
+
+<div class="card bg-white">
+  <h3 class="text-center mb-3">👤 Superuser Profile</h3>
+
+  <form id="profileForm" method="post" novalidate>
+    {% csrf_token %}
+
+    <div class="mb-3">
+      <label class="form-label">Username</label>
+      <input type="text" name="username" value="{{ user.username }}" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">New Password</label>
+      <input id="password" type="password" name="password" class="form-control" placeholder="Leave empty to keep current" />
+      <div class="small-note mt-1">Parolni oʻzgartirish uchun ikkala maydonni toʻldiring.</div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Confirm New Password</label>
+      <input id="password_confirm" type="password" name="password_confirm" class="form-control" placeholder="Confirm new password" />
+    </div>
+
+    <div class="d-flex gap-2">
+      <button type="submit" class="btn btn-primary w-100">Update Profile</button>
+      <a href="{% url 'admin_page' %}" class="btn btn-outline-secondary w-100">Back</a>
+    </div>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Client-side tekshiruv: parol va tasdiq mosligini oldindan ko'rsatadi
+  document.getElementById('profileForm').addEventListener('submit', function(e) {
+    const p = document.getElementById('password').value;
+    const p2 = document.getElementById('password_confirm').value;
+
+    // Agar foydalanuvchi parol maydonini to'ldirsa, confirmni ham to'ldirishni talab qilamiz
+    if (p || p2) {
+      if (p !== p2) {
+        e.preventDefault();
+        alert('Parollar mos emas — iltimos, ikkala maydonga ham bir xil parol kiriting.');
+        return false;
+      }
+      // (Qoʻshimcha: client-side strength check qoʻshsa boʻladi)
+    }
+    // agar ikkisi bo'sh bo'lsa — forma yuborilsin (faqat username yangilanadi)
+  });
+</script>
+</body>
+</html>

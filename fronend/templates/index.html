@@ -8,6 +8,23 @@
 
     <!-- offcanvas area start -->
     <div class="offcanvas__area offcanvas__radius">
+{% if messages %}
+<div id="messages-container" 
+     style="position: fixed; bottom: 20px; right: 20px; z-index: 1050; min-width: 250px;">
+    {% for message in messages %}
+        <div class="alert 
+            {% if message.tags == 'success' %} alert-success
+            {% elif message.tags == 'error' %} alert-danger
+            {% elif message.tags == 'info' %} alert-info
+            {% else %} alert-secondary {% endif %}
+            alert-dismissible fade show shadow-sm small py-2 px-3 mb-2"
+            role="alert"
+            style="opacity: 0.95; border-radius: 8px;">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
         <div class="offcanvas__wrapper">
             <div class="offcanvas__close">
                 <button class="offcanvas__close-btn offcanvas-close-btn">
@@ -331,9 +348,11 @@
                             <div class="tp-product-item transition-3 mb-25">
                                 <div class="tp-product-thumb p-relative fix m-img">
             <!-- Product rasmi bosilganda detail sahifaga o‘tadi -->
-            <a href="{% url 'product_detail' product.id %}">
-                <img src="{{ product.img.url }}" alt="product-electronic">
-            </a>
+           {% if product.img %}
+    <img src="{{ product.img.url }}" alt="{{ product.name }}">
+{% else %}
+    <img src="{% static 'assets/img/no-image.png' %}" alt="No image">
+{% endif %}
 
             <!-- product action -->
             <div class="tp-product-action">
@@ -590,6 +609,21 @@
     <script src="static/assets/js/main.js"></script>
 
     <!-- Notify chiqarish -->
+
+
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const alerts = document.querySelectorAll("#messages-container .alert");
+    alerts.forEach(function (alert) {
+      setTimeout(() => {
+        alert.classList.remove("show");   // bootstrap fade-out
+        alert.classList.add("hide");
+        setTimeout(() => alert.remove(), 500); // DOMdan o‘chadi
+      }, 2000); // 2 sekunddan keyin yo‘qoladi
+    });
+  });
+</script>
 
 </body>
 {% endblock %}

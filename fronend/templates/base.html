@@ -26,8 +26,43 @@
     <!-- CSS here -->
 
 </head>
+<style>
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-down {
+  animation: slideFromTop 0.6s ease-out;
+}
+</style>
 <body>
-    
+
+
+
+{% if messages %}
+<div id="messages-container" 
+     style="position: fixed; top: 20px;  z-index: 1050; min-width: 250px;">
+    {% for message in messages %}
+        <div class="alert 
+            {% if message.tags == 'success' %} alert-success
+            {% elif message.tags == 'error' %} alert-danger
+            {% elif message.tags == 'info' %} alert-info
+            {% else %} alert-secondary {% endif %}
+            shadow-sm small py-2 px-3 mb-2 slide-down"
+            role="alert"
+            style="opacity: 0.95; border-radius: 8px;">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
     {% include "nav.html" %}
     {% block content %}
 
@@ -36,7 +71,19 @@
     {% include "futter.html" %}
  
 
-
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const alerts = document.querySelectorAll("#messages-container .alert");
+    alerts.forEach(function (alert) {
+      setTimeout(() => {
+        alert.style.transition = "opacity 0.5s, transform 0.5s";
+        alert.style.opacity = "0";
+        alert.style.transform = "translateY(-50px)";
+        setTimeout(() => alert.remove(), 500);
+      }, 2000); // 2 sekunddan keyin yo‘qoladi
+    });
+  });
+</script>
 <script src="../static/assets/js/vendor/jquery.js"></script>
 <script src="../static/assets/js/vendor/waypoints.js"></script>
 <script src="../static/assets/js/bootstrap-bundle.js"></script>
